@@ -21,7 +21,7 @@ namespace VECTOR {
 		double magval() const;      // report magnitude
 		double angval() const;      // report angle
 
-		void reset(double n1, double n2, Mode form = RECT);
+		void reset(double n1 = 0.0, double n2 = 0.0, Mode form = RECT);
 		void polar_mode();          // set mode to POL
 		void rect_mode();           // set mode to RECT
 

@@ -1,7 +1,7 @@
 // vector.cpp
 // methods for the Vector class
 
-#define _USE_MATH_DEFINES;   // define M_PI
+#define _USE_MATH_DEFINES    // define M_PI
 
 #include <cmath>
 #include "vector.h"          // includes <iostream>
