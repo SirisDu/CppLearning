@@ -140,6 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="randwalk3.cpp" />
+    <ClCompile Include="vector2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="vector2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

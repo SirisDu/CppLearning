@@ -1,20 +1,72 @@
-﻿// randwalk3.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-//
+﻿// randwalk3.cpp
+// N times random walk and display results
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include "vector2.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    using VECTOR::Vector;
+
+    srand(time(0));           // random seed generator
+
+    double direction{};
+    Vector step;
+    Vector result(0.0, 0.0);
+    double target{};
+    double dstep{};
+
+    std::cout << "Enter target distance (q to quit): ";
+    while (std::cin >> target)                              // get target distance
+    {
+        std::cout << "Enter step length: ";
+        if (!(std::cin >> dstep))                           // get step length
+        {
+            break;
+        }
+
+        int times{};
+        std::cout << "Please enter times of random walk: ";
+        if (!(std::cin >> times))
+        {
+            break;
+        }
+        unsigned long* steps = new unsigned long[times];    // get walk times
+
+        for (int i = 0; i < times; i++)
+        {
+            steps[i] = 0;
+            while (result.magval() < target)
+            {
+                direction = rand() % 360;
+                step.reset(dstep, direction, Vector::POL);
+                result = result + step;
+                ++(steps[i]);
+            }
+        }                                                   // get steps results
+
+        unsigned long max_steps{ steps[0] };
+        unsigned long min_steps{ steps[0] };
+        unsigned long sum{ steps[0] };
+        unsigned long average_steps{};
+        for (int i = 1; i < times; i++)
+        {
+            max_steps = max_steps >= steps[i] ? max_steps : steps[i];
+            min_steps = min_steps <= steps[i] ? min_steps : steps[i];
+            sum += steps[i];
+        }
+        average_steps = sum / times;                         // calculate max, min, and average values
+
+        std::cout << "After " << times << " random walks:" << std::endl
+            << "The slowest walk took " << max_steps << " steps." << std::endl
+            << "The fastest walk took " << min_steps << " steps." << std::endl
+            << "And the average steps = " << average_steps << ".\n";
+
+        delete[] steps;
+        result.reset();
+        std::cout << "Enter target distance (q to quit): ";
+    }
+    std::cout << "Bye!" << std::endl;
 }
-
-// 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
-// 调试程序: F5 或调试 >“开始调试”菜单
-
-// 入门使用技巧: 
-//   1. 使用解决方案资源管理器窗口添加/管理文件
-//   2. 使用团队资源管理器窗口连接到源代码管理
-//   3. 使用输出窗口查看生成输出和其他消息
-//   4. 使用错误列表窗口查看错误
-//   5. 转到“项目”>“添加新项”以创建新的代码文件，或转到“项目”>“添加现有项”以将现有代码文件添加到项目
-//   6. 将来，若要再次打开此项目，请转到“文件”>“打开”>“项目”并选择 .sln 文件
