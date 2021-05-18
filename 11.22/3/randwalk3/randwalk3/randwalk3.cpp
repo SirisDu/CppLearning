@@ -45,6 +45,7 @@ int main()
                 result = result + step;
                 ++(steps[i]);
             }
+            result.reset();
         }                                                   // get steps results
 
         unsigned long max_steps{ steps[0] };
@@ -65,7 +66,6 @@ int main()
             << "And the average steps = " << average_steps << ".\n";
 
         delete[] steps;
-        result.reset();
         std::cout << "Enter target distance (q to quit): ";
     }
     std::cout << "Bye!" << std::endl;
