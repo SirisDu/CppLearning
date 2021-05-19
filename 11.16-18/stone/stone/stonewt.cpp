@@ -33,7 +33,6 @@ Stonewt::~Stonewt() {
 // show weight in stones
 void Stonewt::show_lbs() const {
 	std::cout << pounds_ << " pounds" << std::endl;
-	
 }
 
 // show weight in pounds
