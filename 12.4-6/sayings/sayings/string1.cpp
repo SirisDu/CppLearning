@@ -71,3 +71,53 @@ String& String::operator=(const char* s) {
 
 	return *this;
 }
+
+// read-write char access for non-const String
+char& String::operator[](int i) {
+	return str_[i];
+}
+
+// read-only char access for const String
+const char& String::operator[](int i) const {
+	return str_[i];
+}
+
+// overloaded operator friends
+// compare if String1 < String2
+bool operator<(const String& st1, const String& st2) {
+	return (std::strcmp(st1.str_, st2.str_) < 0);
+}
+
+// compare if String1 > String2
+bool operator>(const String& st1, const String& st2) {
+	return st2 < st1;
+}
+
+// compare if String1 == String2
+bool operator==(const String& st1, const String& st2) {
+	return (std::strcmp(st1.str_, st2.str_) == 0);
+}
+
+// simple String output
+std::ostream& operator<<(std::ostream& os, const String& st) {
+	os << st.str_;
+
+	return os;
+}
+
+// quick and dirty String input
+std::istream& operator>>(std::istream& is, String& st) {
+	char temp[String::CINLIM]{};
+
+	is.get(temp, String::CINLIM);
+	if (is)
+	{
+		st = temp;
+	}
+	while (is && is.get() != '\n')
+	{
+		continue;
+	}
+
+	return is;
+}
