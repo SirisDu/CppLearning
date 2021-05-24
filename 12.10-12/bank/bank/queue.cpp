@@ -77,7 +77,8 @@ bool Queue::dequeue(Item& item) {
 
 // private Queue methods
 Queue::Queue(const Queue& q) : qsize(0) {
-
+	front_ = rear_ = nullptr;
+	items_ = 0;
 }
 
 Queue& Queue::operator=(const Queue& q) {
