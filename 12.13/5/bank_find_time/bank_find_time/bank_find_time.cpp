@@ -58,6 +58,8 @@ int main()
         sum_line = 0;
         wait_time = 0;
         line_wait = 0;
+        perhour = std::rand() % 100 + 1;
+        min_per_customer = MIN_PER_HR / perhour;
 
         // running the simulation
         for (int cycle = 0; cycle < cyclelimit; ++cycle)
@@ -89,8 +91,6 @@ int main()
             sum_line += line.queuecount();
         }
         average = double(line_wait) / served;
-        ++perhour;
-        min_per_customer = MIN_PER_HR / perhour;
     }
 
     // reporting results
