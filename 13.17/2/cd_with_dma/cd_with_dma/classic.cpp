@@ -45,6 +45,8 @@ Classic& Classic::operator=(const Classic& disk) {
 	{
 		Cd::operator=(disk);
 
+		delete[] main_works_;
+
 		size_t length{ strlen(disk.main_works_) };
 
 		main_works_ = new char[length + 1];

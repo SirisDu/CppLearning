@@ -55,6 +55,9 @@ Cd& Cd::operator=(const Cd& disk) {
 	}
 	else
 	{
+		delete[] performers_;
+		delete[] label_;
+
 		size_t length1{ strlen(disk.performers_) };
 		size_t length2{ strlen(disk.label_) };
 
