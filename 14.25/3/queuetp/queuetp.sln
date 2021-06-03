@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "queuetp", "queuetp\queuetp.vcxproj", "{6614042D-1FA7-407B-ACB1-DC3B2AC4A7A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6614042D-1FA7-407B-ACB1-DC3B2AC4A7A3}.Debug|x64.ActiveCfg = Debug|x64
+		{6614042D-1FA7-407B-ACB1-DC3B2AC4A7A3}.Debug|x64.Build.0 = Debug|x64
+		{6614042D-1FA7-407B-ACB1-DC3B2AC4A7A3}.Debug|x86.ActiveCfg = Debug|Win32
+		{6614042D-1FA7-407B-ACB1-DC3B2AC4A7A3}.Debug|x86.Build.0 = Debug|Win32
+		{6614042D-1FA7-407B-ACB1-DC3B2AC4A7A3}.Release|x64.ActiveCfg = Release|x64
+		{6614042D-1FA7-407B-ACB1-DC3B2AC4A7A3}.Release|x64.Build.0 = Release|x64
+		{6614042D-1FA7-407B-ACB1-DC3B2AC4A7A3}.Release|x86.ActiveCfg = Release|Win32
+		{6614042D-1FA7-407B-ACB1-DC3B2AC4A7A3}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F54C314B-F30D-4A63-9E4F-DEAA86ECB90C}
+	EndGlobalSection
+EndGlobal
