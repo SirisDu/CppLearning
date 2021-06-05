@@ -1,5 +1,5 @@
 ﻿// Example2.cpp
-// Resizing
+// Assignment and resizing
 
 #include <iostream>
 #include <Eigen/Dense>
@@ -22,4 +22,12 @@ int main()
     m2.resize(4, 4); // no operation
     std::cout << "The matrix m is of size "
         << m2.rows() << "x" << m2.cols() << std::endl;
+
+    std::cout << "Assignment and resizing:" << std::endl;
+    Eigen::MatrixXf a(2, 2);
+    std::cout << "a is of size " << a.rows() << "x" << a.cols() << std::endl;
+    Eigen::MatrixXf b(3, 3);
+    a = b;
+    std::cout << "a is now of size " << a.rows() << "x" << a.cols()
+        << std::endl;
 }
